@@ -10,7 +10,7 @@ use SetBased\Exception\RuntimeException;
 /**
  * Concrete implementation of Abc for test purposes.
  */
-class Framework extends Abc
+class TestFramework extends Abc
 {
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -21,6 +21,7 @@ class Framework extends Abc
     parent::__construct();
 
     self::$domainResolver = new ThirdLevelDomainResolver();
+    self::$canonicalHostnameResolver = new TestCanonicalHostnameResolver();
   }
 
   //--------------------------------------------------------------------------------------------------------------------

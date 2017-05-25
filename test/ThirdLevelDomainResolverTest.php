@@ -13,8 +13,8 @@ class ThirdLevelDomainResolverTest extends TestCase
    */
   public function testGetDomain1()
   {
-    $_SERVER['HTTP_HOST'] = 'domain.example.com';
-    $abc                  = new Framework();
+    $abc                                              = new TestFramework();
+    TestCanonicalHostnameResolver::$canonicalHostname = 'domain.example.com';
 
     $this->assertSame('DOMAIN', $abc::$domainResolver->getDomain());
   }
@@ -25,8 +25,8 @@ class ThirdLevelDomainResolverTest extends TestCase
    */
   public function testGetDomain2()
   {
-    $_SERVER['HTTP_HOST'] = 'www.example.com';
-    $abc                  = new Framework();
+    $abc                                              = new TestFramework();
+    TestCanonicalHostnameResolver::$canonicalHostname = 'www.example.com';
 
     $this->assertSame('SYS', $abc::$domainResolver->getDomain());
   }
@@ -37,8 +37,8 @@ class ThirdLevelDomainResolverTest extends TestCase
    */
   public function testGetDomain3()
   {
-    $_SERVER['HTTP_HOST'] = 'example.com';
-    $abc                  = new Framework();
+    $abc                                              = new TestFramework();
+    TestCanonicalHostnameResolver::$canonicalHostname = 'example.com';
 
     $this->assertSame('SYS', $abc::$domainResolver->getDomain());
   }
@@ -49,8 +49,8 @@ class ThirdLevelDomainResolverTest extends TestCase
    */
   public function testGetDomain4()
   {
-    $_SERVER['HTTP_HOST'] = 'x.y.example.com';
-    $abc                  = new Framework();
+    $abc                                              = new TestFramework();
+    TestCanonicalHostnameResolver::$canonicalHostname = 'x.y.example.com';
 
     $this->assertSame('SYS', $abc::$domainResolver->getDomain());
   }

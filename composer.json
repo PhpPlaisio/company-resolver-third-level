@@ -8,14 +8,14 @@
   ],
   "type": "library",
   "license": "MIT",
+  "require": {
+    "php": ">=7.0.0",
+    "setbased/abc": "^0.9.11",
+    "setbased/abc-domain-resolver": "^0.9.0"
+  },
   "require-dev": {
     "phing/phing": "^2.0.0",
     "phpunit/phpunit": "^6.0.0"
-  },
-  "require": {
-    "php": ">=7.0.0",
-    "setbased/abc": "^0.9.8",
-    "setbased/abc-domain-resolver": "*"
   },
   "autoload": {
     "psr-4": {

@@ -20,18 +20,6 @@ class ThirdLevelDomainResolver implements DomainResolver
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Object constructor.
-   *
-   * @api
-   * @since 1.0.0
-   */
-  public function __construct()
-  {
-    $this->setDomain();
-  }
-
-  //--------------------------------------------------------------------------------------------------------------------
-  /**
    * Returns the domain (a.k.a. company abbreviation) based on the third level domain name.
    *
    * @return string
@@ -41,16 +29,21 @@ class ThirdLevelDomainResolver implements DomainResolver
    */
   public function getDomain()
   {
+    if ($this->domain===null)
+    {
+      $this->setDomain();
+    }
+
     return $this->domain;
   }
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Sets the domain (a.k.a. company abbreviation) based on the third-level domain of the canonical host name.
+   * Derives the domain (a.k.a. company abbreviation) based on the third-level domain of the canonical host name.
    */
   private function setDomain()
   {
-    $parts = explode('.', Abc::getInstance()->getCanonicalServerName());
+    $parts = explode('.', Abc::$canonicalHostnameResolver->getCanonicalHostName());
     if (count($parts)==3 && $parts[0]!='www')
     {
       $this->domain = strtoupper($parts[0]);
