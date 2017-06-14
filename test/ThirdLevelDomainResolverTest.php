@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 //----------------------------------------------------------------------------------------------------------------------
 /**
- * Test cases fro ThirdLevelDomainResolver. Note we set canonical host name after we have created the framework. The
+ * Test cases for ThirdLevelDomainResolver. Note we set canonical host name after we have created the framework. The
  * domain must not be derived before the first request of the domain.
  */
 class ThirdLevelDomainResolverTest extends TestCase
