@@ -46,7 +46,7 @@ class TestFramework extends Abc
   /**
    * {@inheritdoc}
    */
-  protected function getLoginUrl($url)
+  public function getLoginUrl($url)
   {
     throw new RuntimeException('Not implemented');
   }
