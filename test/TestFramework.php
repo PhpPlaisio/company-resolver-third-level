@@ -6,7 +6,6 @@ use SetBased\Abc\Abc;
 use SetBased\Abc\DomainResolver\ThirdLevelDomainResolver;
 use SetBased\Exception\RuntimeException;
 
-//----------------------------------------------------------------------------------------------------------------------
 /**
  * Concrete implementation of Abc for test purposes.
  */
@@ -20,7 +19,7 @@ class TestFramework extends Abc
   {
     parent::__construct();
 
-    self::$domainResolver = new ThirdLevelDomainResolver();
+    self::$domainResolver            = new ThirdLevelDomainResolver();
     self::$canonicalHostnameResolver = new TestCanonicalHostnameResolver();
   }
 
@@ -38,6 +37,15 @@ class TestFramework extends Abc
    * {@inheritdoc}
    */
   public function getBlobStore()
+  {
+    throw new RuntimeException('Not implemented');
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * {@inheritdoc}
+   */
+  public function getErrorLogger()
   {
     throw new RuntimeException('Not implemented');
   }
