@@ -1,10 +1,10 @@
 {
   "name": "setbased/abc-domain-resolver-third-level",
-  "description": "ABC Framework: Third Level Domain Resolver",
+  "description": "ABC-Framework: Third Level Domain Resolver",
   "keywords": [
-    "framework",
-    "domain",
-    "resolver"
+    "ABC-Framework",
+    "Domain",
+    "Resolver"
   ],
   "type": "library",
   "license": "MIT",
