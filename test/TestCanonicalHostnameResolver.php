@@ -1,12 +1,11 @@
 <?php
 //----------------------------------------------------------------------------------------------------------------------
-namespace SetBased\Abc\DomainResolver\Test;
+namespace SetBased\Abc\CompanyResolver\Test;
 
 use SetBased\Abc\CanonicalHostnameResolver\CanonicalHostnameResolver;
 
-//----------------------------------------------------------------------------------------------------------------------
 /**
- * A CanonicalHostnameResolver for testing ThirdLevelDomainResolver.
+ * A CanonicalHostnameResolver for testing ThirdLevelCompanyResolver.
  */
 class TestCanonicalHostnameResolver implements CanonicalHostnameResolver
 {

@@ -1,9 +1,9 @@
 <?php
 //----------------------------------------------------------------------------------------------------------------------
-namespace SetBased\Abc\DomainResolver\Test;
+namespace SetBased\Abc\CompanyResolver\Test;
 
 use SetBased\Abc\Abc;
-use SetBased\Abc\DomainResolver\ThirdLevelDomainResolver;
+use SetBased\Abc\CompanyResolver\ThirdLevelCompanyResolver;
 use SetBased\Exception\RuntimeException;
 
 /**
@@ -19,8 +19,9 @@ class TestFramework extends Abc
   {
     parent::__construct();
 
-    self::$domainResolver            = new ThirdLevelDomainResolver();
+    self::$companyResolver           = new ThirdLevelCompanyResolver(T::CMP_ID_SYS);
     self::$canonicalHostnameResolver = new TestCanonicalHostnameResolver();
+    self::$DL                        = new TestDataLayer();
   }
 
   //--------------------------------------------------------------------------------------------------------------------

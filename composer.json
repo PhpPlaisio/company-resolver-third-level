@@ -1,17 +1,17 @@
 {
-  "name": "setbased/abc-domain-resolver-third-level",
-  "description": "ABC-Framework: Third Level Domain Resolver",
+  "name": "setbased/abc-company-resolver-third-level",
+  "description": "ABC-Framework: Third Level Company Resolver",
   "keywords": [
     "ABC-Framework",
-    "Domain",
+    "Company",
     "Resolver"
   ],
   "type": "library",
   "license": "MIT",
   "require": {
     "php": ">=7.0.0",
-    "setbased/abc": "^0.9.11",
-    "setbased/abc-domain-resolver": "^0.9.0"
+    "setbased/abc": "^0.10.5",
+    "setbased/abc-company-resolver": "^0.10.1"
   },
   "require-dev": {
     "phing/phing": "^2.0.0",
@@ -19,12 +19,12 @@
   },
   "autoload": {
     "psr-4": {
-      "SetBased\\Abc\\DomainResolver\\": "src/"
+      "SetBased\\Abc\\CompanyResolver\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "SetBased\\Abc\\DomainResolver\\Test\\": "test"
+      "SetBased\\Abc\\CompanyResolver\\Test\\": "test"
     }
   },
   "config": {
