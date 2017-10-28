@@ -1,4 +1,4 @@
-# ABC-Framework: Third Level company Resolver
+# ABC-Framework: Third Level Company Resolver
 
 <table>
 <thead>
