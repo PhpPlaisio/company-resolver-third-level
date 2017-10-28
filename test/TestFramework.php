@@ -37,6 +37,15 @@ class TestFramework extends Abc
   /**
    * {@inheritdoc}
    */
+  public function createNamedLock()
+  {
+    throw new RuntimeException('Not implemented');
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * {@inheritdoc}
+   */
   public function getBlobStore()
   {
     throw new RuntimeException('Not implemented');
