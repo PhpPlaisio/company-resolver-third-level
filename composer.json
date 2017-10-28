@@ -11,7 +11,7 @@
   "require": {
     "php": ">=7.0.0",
     "setbased/abc": "^0.10.5",
-    "setbased/abc-company-resolver": "^0.10.1"
+    "setbased/abc-company-resolver": "^1.0.0"
   },
   "require-dev": {
     "phing/phing": "^2.0.0",
