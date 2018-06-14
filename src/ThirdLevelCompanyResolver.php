@@ -1,5 +1,5 @@
 <?php
-//----------------------------------------------------------------------------------------------------------------------
+
 namespace SetBased\Abc\CompanyResolver;
 
 use SetBased\Abc\Abc;
@@ -33,7 +33,7 @@ class ThirdLevelCompanyResolver implements CompanyResolver
    * @api
    * @since 1.0.0
    */
-  public function __construct($defaultCmpId)
+  public function __construct(int $defaultCmpId)
   {
     $this->defaultCmpId = $defaultCmpId;
   }
@@ -47,7 +47,7 @@ class ThirdLevelCompanyResolver implements CompanyResolver
    * @api
    * @since 1.0.0
    */
-  public function getCmpId()
+  public function getCmpId(): int
   {
     if ($this->cmpId===null)
     {
@@ -61,7 +61,7 @@ class ThirdLevelCompanyResolver implements CompanyResolver
   /**
    * Derives the company based on the third-level domain of the canonical host name.
    */
-  private function setCompany()
+  private function setCompany(): void
   {
     $parts = explode('.', Abc::$canonicalHostnameResolver->getCanonicalHostName());
     if (count($parts)==3 && $parts[0]!='www')

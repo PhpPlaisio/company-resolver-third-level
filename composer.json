@@ -9,9 +9,9 @@
   "type": "library",
   "license": "MIT",
   "require": {
-    "php": ">=7.0.0",
-    "setbased/abc": "^0.10.15",
-    "setbased/abc-company-resolver": "^1.0.0"
+    "php": ">=7.1.0",
+    "setbased/abc": "^0.10.33",
+    "setbased/abc-company-resolver": "^2.0.0"
   },
   "require-dev": {
     "phing/phing": "^2.0.0",
@@ -24,10 +24,10 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "SetBased\\Abc\\CompanyResolver\\Test\\": "test"
+      "SetBased\\Abc\\CompanyResolver\\Test\\": "test/"
     }
   },
   "config": {
-    "bin-dir": "bin"
+    "bin-dir": "bin/"
   }
 }
