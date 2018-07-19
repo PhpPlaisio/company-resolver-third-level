@@ -1,5 +1,6 @@
 <?php
-//----------------------------------------------------------------------------------------------------------------------
+declare(strict_types=1);
+
 namespace SetBased\Abc\CompanyResolver\Test;
 
 use SetBased\Abc\CanonicalHostnameResolver\CanonicalHostnameResolver;
@@ -13,7 +14,7 @@ class TestCanonicalHostnameResolver implements CanonicalHostnameResolver
   /**
    * The canonical host name.
    *
-   * @var string|null
+   * @var string
    */
   public static $canonicalHostname;
 
@@ -26,7 +27,7 @@ class TestCanonicalHostnameResolver implements CanonicalHostnameResolver
    * @api
    * @since 1.0.0
    */
-  public function getCanonicalHostname()
+  public function getCanonicalHostname(): string
   {
     return self::$canonicalHostname;
   }
