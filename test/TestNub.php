@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\CompanyResolver\Test;
+namespace Plaisio\CompanyResolver\Test;
 
-use SetBased\Abc\Abc;
-use SetBased\Abc\CompanyResolver\ThirdLevelCompanyResolver;
+use Plaisio\CompanyResolver\ThirdLevelCompanyResolver;
+use Plaisio\Kernel\Nub;
 
 /**
  * Concrete implementation of Abc for test purposes.
  */
-class TestFramework extends Abc
+class TestNub extends Nub
 {
   //--------------------------------------------------------------------------------------------------------------------
   /**

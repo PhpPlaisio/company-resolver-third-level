@@ -1,17 +1,16 @@
 {
-  "name": "setbased/abc-company-resolver-third-level",
-  "description": "ABC-Framework: Third Level Company Resolver",
+  "name": "plaisio/company-resolver-third-level",
+  "description": "PhpPlaisio: Third Level Company Resolver",
   "keywords": [
-    "ABC-Framework",
-    "Company",
-    "Resolver"
+    "PhpPlaisio",
+    "Company Resolver"
   ],
   "type": "library",
   "license": "MIT",
   "require": {
     "php": ">=7.1.0",
-    "setbased/abc": "^0.10.33",
-    "setbased/abc-company-resolver": "^2.0.0"
+    "plaisio/kernel": "^1.0.0",
+    "plaisio/company-resolver": "^3.0.0"
   },
   "require-dev": {
     "phing/phing": "^2.0.0",
@@ -19,12 +18,12 @@
   },
   "autoload": {
     "psr-4": {
-      "SetBased\\Abc\\CompanyResolver\\": "src/"
+      "Plaisio\\CompanyResolver\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "SetBased\\Abc\\CompanyResolver\\Test\\": "test/"
+      "Plaisio\\CompanyResolver\\Test\\": "test/"
     }
   },
   "config": {

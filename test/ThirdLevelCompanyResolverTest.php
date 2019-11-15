@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\CompanyResolver\Test;
+namespace Plaisio\CompanyResolver\Test;
 
 use PHPUnit\Framework\TestCase;
 
@@ -17,7 +17,7 @@ class ThirdLevelCompanyResolverTest extends TestCase
    */
   public function testGetCmpId1()
   {
-    $abc                                              = new TestFramework();
+    $abc                                              = new TestNub();
     TestCanonicalHostnameResolver::$canonicalHostname = 'domain.example.com';
 
     $this->assertSame(T::CMP_ID_DOMAIN, $abc::$companyResolver->getCmpId());
@@ -29,7 +29,7 @@ class ThirdLevelCompanyResolverTest extends TestCase
    */
   public function testGetCmpId2()
   {
-    $abc                                              = new TestFramework();
+    $abc                                              = new TestNub();
     TestCanonicalHostnameResolver::$canonicalHostname = 'www.example.com';
 
     $this->assertSame(T::CMP_ID_SYS, $abc::$companyResolver->getCmpId());
@@ -41,7 +41,7 @@ class ThirdLevelCompanyResolverTest extends TestCase
    */
   public function testGetCmpId3()
   {
-    $abc                                              = new TestFramework();
+    $abc                                              = new TestNub();
     TestCanonicalHostnameResolver::$canonicalHostname = 'example.com';
 
     $this->assertSame(T::CMP_ID_SYS, $abc::$companyResolver->getCmpId());
@@ -53,7 +53,7 @@ class ThirdLevelCompanyResolverTest extends TestCase
    */
   public function testGetCmpId4()
   {
-    $abc                                              = new TestFramework();
+    $abc                                              = new TestNub();
     TestCanonicalHostnameResolver::$canonicalHostname = 'x.y.example.com';
 
     $this->assertSame(T::CMP_ID_SYS, $abc::$companyResolver->getCmpId());

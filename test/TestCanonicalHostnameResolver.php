@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\CompanyResolver\Test;
+namespace Plaisio\CompanyResolver\Test;
 
-use SetBased\Abc\CanonicalHostnameResolver\CanonicalHostnameResolver;
+use Plaisio\CanonicalHostnameResolver\CanonicalHostnameResolver;
 
 /**
  * A CanonicalHostnameResolver for testing ThirdLevelCompanyResolver.

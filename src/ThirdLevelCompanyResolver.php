@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\CompanyResolver;
+namespace Plaisio\CompanyResolver;
 
-use SetBased\Abc\Abc;
+use Plaisio\Kernel\Nub;
 
 /**
  * Company resolver for websites were the company abbreviation is the third level domain name.
@@ -29,7 +29,7 @@ class ThirdLevelCompanyResolver implements CompanyResolver
   /**
    * Object constructor.
    *
-   * @param int $defaultCmpId The default ID of the company.
+   * @param int $defaultCmpId The ID of the default company.
    *
    * @api
    * @since 1.0.0
@@ -64,10 +64,10 @@ class ThirdLevelCompanyResolver implements CompanyResolver
    */
   private function setCompany(): void
   {
-    $parts = explode('.', Abc::$canonicalHostnameResolver->getCanonicalHostName());
+    $parts = explode('.', Nub::$canonicalHostnameResolver->getCanonicalHostName());
     if (count($parts)==3 && $parts[0]!='www')
     {
-      $this->cmpId = Abc::$DL->abcCompanyGetCmpIdByCmpAbbr($parts[0]) ?? $this->defaultCmpId;
+      $this->cmpId = Nub::$DL->abcCompanyGetCmpIdByCmpAbbr($parts[0]) ?? $this->defaultCmpId;
     }
     else
     {

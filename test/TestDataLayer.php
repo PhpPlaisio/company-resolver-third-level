@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace SetBased\Abc\CompanyResolver\Test;
+namespace Plaisio\CompanyResolver\Test;
 
 /**
  * Mocke up data layer for testing purposes.
