@@ -15,7 +15,7 @@ class ThirdLevelCompanyResolverTest extends TestCase
   /**
    * Test with proper third level domain.
    */
-  public function testGetCmpId1()
+  public function testGetCmpId1(): void
   {
     $abc                                              = new TestNub();
     TestCanonicalHostnameResolver::$canonicalHostname = 'domain.example.com';
@@ -27,7 +27,7 @@ class ThirdLevelCompanyResolverTest extends TestCase
   /**
    * Test with www as third level domain.
    */
-  public function testGetCmpId2()
+  public function testGetCmpId2(): void
   {
     $abc                                              = new TestNub();
     TestCanonicalHostnameResolver::$canonicalHostname = 'www.example.com';
@@ -39,7 +39,7 @@ class ThirdLevelCompanyResolverTest extends TestCase
   /**
    * Test with www as second level domain.
    */
-  public function testGetCmpId3()
+  public function testGetCmpId3(): void
   {
     $abc                                              = new TestNub();
     TestCanonicalHostnameResolver::$canonicalHostname = 'example.com';
@@ -51,7 +51,7 @@ class ThirdLevelCompanyResolverTest extends TestCase
   /**
    * Test with www as forth level domain.
    */
-  public function testGetCmpId4()
+  public function testGetCmpId4(): void
   {
     $abc                                              = new TestNub();
     TestCanonicalHostnameResolver::$canonicalHostname = 'x.y.example.com';
