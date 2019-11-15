@@ -30,4 +30,10 @@
 </td>
 </tr>
 </tbody>
-</table>
+</table>   
+
+A concrete implementation of [plaisio/company-resolver](https://packagist.org/packages/plaisio/company-resolver) using the third level of the domain name.
+
+# License
+
+This project is licensed under the MIT license.
