@@ -64,10 +64,10 @@ class ThirdLevelCompanyResolver implements CompanyResolver
    */
   private function setCompany(): void
   {
-    $parts = explode('.', Nub::$canonicalHostnameResolver->getCanonicalHostName());
+    $parts = explode('.', Nub::$nub->canonicalHostnameResolver->getCanonicalHostname());
     if (count($parts)==3 && $parts[0]!='www')
     {
-      $this->cmpId = Nub::$DL->abcCompanyGetCmpIdByCmpAbbr($parts[0]) ?? $this->defaultCmpId;
+      $this->cmpId = Nub::$nub->DL->abcCompanyGetCmpIdByCmpAbbr($parts[0]) ?? $this->defaultCmpId;
     }
     else
     {
