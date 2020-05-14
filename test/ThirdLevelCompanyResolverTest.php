@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Plaisio\CompanyResolver\Test;
 
 use PHPUnit\Framework\TestCase;
-use Plaisio\Kernel\Nub;
+use Plaisio\PlaisioKernel;
 
 /**
  * Test cases for ThirdLevelCompanyResolver. Note we set canonical host name after we have created the framework. The
@@ -16,7 +16,7 @@ class ThirdLevelCompanyResolverTest extends TestCase
   /**
    * Our concrete instance of Kernel.
    *
-   * @var Nub
+   * @var PlaisioKernel
    */
   private $kernel;
 
@@ -39,7 +39,7 @@ class ThirdLevelCompanyResolverTest extends TestCase
   {
     TestCanonicalHostnameResolver::$canonicalHostname = 'domain.example.com';
 
-    $this->assertSame(T::CMP_ID_DOMAIN, Nub::$nub->companyResolver->getCmpId());
+    $this->assertSame(T::CMP_ID_DOMAIN, $this->kernel->company->cmpId);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ class ThirdLevelCompanyResolverTest extends TestCase
   {
     TestCanonicalHostnameResolver::$canonicalHostname = 'www.example.com';
 
-    $this->assertSame(T::CMP_ID_SYS, Nub::$nub->companyResolver->getCmpId());
+    $this->assertSame(T::CMP_ID_SYS, $this->kernel->company->cmpId);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -61,7 +61,7 @@ class ThirdLevelCompanyResolverTest extends TestCase
   {
     TestCanonicalHostnameResolver::$canonicalHostname = 'example.com';
 
-    $this->assertSame(T::CMP_ID_SYS, Nub::$nub->companyResolver->getCmpId());
+    $this->assertSame(T::CMP_ID_SYS, $this->kernel->company->cmpId);
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -72,7 +72,7 @@ class ThirdLevelCompanyResolverTest extends TestCase
   {
     TestCanonicalHostnameResolver::$canonicalHostname = 'x.y.example.com';
 
-    $this->assertSame(T::CMP_ID_SYS, Nub::$nub->companyResolver->getCmpId());
+    $this->assertSame(T::CMP_ID_SYS, $this->kernel->company->cmpId);
   }
 
   //--------------------------------------------------------------------------------------------------------------------

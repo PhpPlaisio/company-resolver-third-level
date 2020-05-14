@@ -6,22 +6,13 @@ namespace Plaisio\CompanyResolver\Test;
 use Plaisio\CanonicalHostnameResolver\CanonicalHostnameResolver;
 use Plaisio\CompanyResolver\CompanyResolver;
 use Plaisio\CompanyResolver\ThirdLevelCompanyResolver;
-use Plaisio\Kernel\Nub;
+use Plaisio\PlaisioKernel;
 
 /**
  * Kernel for testing purposes.
  */
-class TestKernel extends Nub
+class TestKernel extends PlaisioKernel
 {
-  //--------------------------------------------------------------------------------------------------------------------
-  /**
-   * Object constructor.
-   */
-  public function __construct()
-  {
-    parent::__construct();
-  }
-
   //--------------------------------------------------------------------------------------------------------------------
   /**
    * Returns the helper object for deriving the canonical hostname.
@@ -39,9 +30,9 @@ class TestKernel extends Nub
    *
    * @return CompanyResolver
    */
-  protected function getCompanyResolver(): CompanyResolver
+  protected function getCompany(): CompanyResolver
   {
-    return new ThirdLevelCompanyResolver(T::CMP_ID_SYS);
+    return new ThirdLevelCompanyResolver($this, T::CMP_ID_SYS);
   }
 
   //--------------------------------------------------------------------------------------------------------------------

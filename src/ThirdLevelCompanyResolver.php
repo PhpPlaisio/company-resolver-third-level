@@ -3,21 +3,14 @@ declare(strict_types=1);
 
 namespace Plaisio\CompanyResolver;
 
-use Plaisio\Kernel\Nub;
+use Plaisio\PlaisioObject;
 
 /**
  * Company resolver for websites were the company abbreviation is the third level domain name.
  */
-class ThirdLevelCompanyResolver implements CompanyResolver
+class ThirdLevelCompanyResolver extends PlaisioObject implements CompanyResolver
 {
   //--------------------------------------------------------------------------------------------------------------------
-  /**
-   * The ID of the company.
-   *
-   * @var int|null
-   */
-  private $cmpId;
-
   /**
    * The default ID of the company.
    *
@@ -29,14 +22,41 @@ class ThirdLevelCompanyResolver implements CompanyResolver
   /**
    * Object constructor.
    *
-   * @param int $defaultCmpId The ID of the default company.
+   * @param PlaisioObject $object       The parent PhpPlaisio object.
+   * @param int           $defaultCmpId The ID of the default company.
    *
    * @api
    * @since 1.0.0
    */
-  public function __construct(int $defaultCmpId)
+  public function __construct(PlaisioObject $object, int $defaultCmpId)
   {
+    parent::__construct($object);
+
     $this->defaultCmpId = $defaultCmpId;
+  }
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns the value of a property.
+   *
+   * Do not call this method directly as it is a PHP magic method that
+   * will be implicitly called when executing `$value = $object->property;`.
+   *
+   * @param string $property The name of the property.
+   *
+   * @return mixed The value of the property.
+   *
+   * @throws \LogicException If the property is not defined.
+   */
+  public function __get(string $property)
+  {
+    $getter = 'get'.ucfirst($property);
+    if (method_exists($this, $getter))
+    {
+      return $this->$property = $this->$getter();
+    }
+
+    throw new \LogicException(sprintf('Unknown property %s::%s', __CLASS__, $property));
   }
 
   //--------------------------------------------------------------------------------------------------------------------
@@ -44,35 +64,16 @@ class ThirdLevelCompanyResolver implements CompanyResolver
    * Returns the ID of the company.
    *
    * @return int
-   *
-   * @api
-   * @since 1.0.0
    */
-  public function getCmpId(): int
+  protected function getCmpId(): int
   {
-    if ($this->cmpId===null)
-    {
-      $this->setCompany();
-    }
-
-    return $this->cmpId;
-  }
-
-  //--------------------------------------------------------------------------------------------------------------------
-  /**
-   * Derives the company based on the third-level domain of the canonical host name.
-   */
-  private function setCompany(): void
-  {
-    $parts = explode('.', Nub::$nub->canonicalHostnameResolver->getCanonicalHostname());
+    $parts = explode('.', $this->nub->canonicalHostnameResolver->getCanonicalHostname());
     if (count($parts)==3 && $parts[0]!='www')
     {
-      $this->cmpId = Nub::$nub->DL->abcCompanyGetCmpIdByCmpAbbr($parts[0]) ?? $this->defaultCmpId;
+      return $this->nub->DL->abcCompanyGetCmpIdByCmpAbbr($parts[0]) ?? $this->defaultCmpId;
     }
-    else
-    {
-      $this->cmpId = $this->defaultCmpId;
-    }
+
+    return $this->defaultCmpId;
   }
 
   //--------------------------------------------------------------------------------------------------------------------
