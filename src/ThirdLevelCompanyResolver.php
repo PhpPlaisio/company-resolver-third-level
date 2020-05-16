@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Plaisio\CompanyResolver;
 
+use Plaisio\PlaisioInterface;
 use Plaisio\PlaisioObject;
 
 /**
@@ -22,13 +23,13 @@ class ThirdLevelCompanyResolver extends PlaisioObject implements CompanyResolver
   /**
    * Object constructor.
    *
-   * @param PlaisioObject $object       The parent PhpPlaisio object.
-   * @param int           $defaultCmpId The ID of the default company.
+   * @param PlaisioInterface $object       The parent PhpPlaisio object.
+   * @param int              $defaultCmpId The ID of the default company.
    *
    * @api
    * @since 1.0.0
    */
-  public function __construct(PlaisioObject $object, int $defaultCmpId)
+  public function __construct(PlaisioInterface $object, int $defaultCmpId)
   {
     parent::__construct($object);
 
