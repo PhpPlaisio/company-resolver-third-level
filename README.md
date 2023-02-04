@@ -22,8 +22,8 @@
 <a href="https://packagist.org/packages/plaisio/company-resolver-third-level"><img src="https://poser.pugx.org/plaisio/company-resolver-third-level/v/stable" alt="Latest Stable Version"/></a>
 </td>
 <td>
-<a href="https://travis-ci.org/PhpPlaisio/company-resolver-third-level"><img src="https://travis-ci.org/PhpPlaisio/company-resolver-third-level.svg?branch=master" alt="Build Status"/></a><br/>
-<a href="https://scrutinizer-ci.com/g/PhpPlaisio/company-resolver-third-level/?branch=master"><img src="https://scrutinizer-ci.com/g/PhpPlaisio/company-resolver-third-level/badges/coverage.png?b=master" alt="Code Coverage"/></a>
+<a href="https://github.com/PhpPlaisio/company-resolver-third-level/actions/workflows/unit.yml"><img src="https://github.com/PhpPlaisio/company-resolver-third-level/actions/workflows/unit.yml/badge.svg" alt="Build Status"/></a><br/>
+<a href="https://codecov.io/gh/PhpPlaisio/company-resolver-third-level"><img src="https://codecov.io/gh/PhpPlaisio/company-resolver-third-level/branch/master/graph/badge.svg" alt="Code Coverage"/></a>
 </td>
 <td>
 <a href="https://scrutinizer-ci.com/g/PhpPlaisio/company-resolver-third-level/?branch=master"><img src="https://scrutinizer-ci.com/g/PhpPlaisio/company-resolver-third-level/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"/></a>
