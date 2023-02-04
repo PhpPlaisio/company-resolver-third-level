@@ -17,7 +17,7 @@ class ThirdLevelCompanyResolver extends PlaisioObject implements CompanyResolver
    *
    * @var int
    */
-  private $defaultCmpId;
+  private int $defaultCmpId;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**

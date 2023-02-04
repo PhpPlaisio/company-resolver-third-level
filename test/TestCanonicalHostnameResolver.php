@@ -16,7 +16,7 @@ class TestCanonicalHostnameResolver implements CanonicalHostnameResolver
    *
    * @var string
    */
-  public static $canonicalHostname;
+  public static string $canonicalHostname;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
