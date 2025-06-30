@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Plaisio\CompanyResolver\Test;
+namespace Plaisio\CompanyResolver\Test\Plaisio;
 
 /**
  * Mock constant class for testing purposes.

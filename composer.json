@@ -8,9 +8,9 @@
   "license": "MIT",
   "require": {
     "php": ">=8.3",
-    "plaisio/canonical-hostname-resolver": "^1.4.0",
+    "plaisio/canonical-hostname-resolver": "^2.0.0",
     "plaisio/company-resolver": "^2.2.0",
-    "plaisio/kernel": "^3.3.0"
+    "plaisio/kernel": "^3.3.1"
   },
   "require-dev": {
     "phing/phing": "^3.0.1",

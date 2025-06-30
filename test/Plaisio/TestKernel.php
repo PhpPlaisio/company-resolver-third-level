@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Plaisio\CompanyResolver\Test;
+namespace Plaisio\CompanyResolver\Test\Plaisio;
 
 use Plaisio\CanonicalHostnameResolver\CanonicalHostnameResolver;
 use Plaisio\CompanyResolver\CompanyResolver;

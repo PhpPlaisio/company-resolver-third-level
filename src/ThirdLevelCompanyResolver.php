@@ -20,6 +20,7 @@ class ThirdLevelCompanyResolver extends PlaisioObject implements CompanyResolver
   private int $defaultCmpId;
 
   //--------------------------------------------------------------------------------------------------------------------
+
   /**
    * Object constructor.
    *
@@ -68,7 +69,7 @@ class ThirdLevelCompanyResolver extends PlaisioObject implements CompanyResolver
    */
   protected function getCmpId(): int
   {
-    $parts = explode('.', $this->nub->canonicalHostnameResolver->getCanonicalHostname());
+    $parts = explode('.', $this->nub->canonicalHostnameResolver->canonicalHostname);
     if (count($parts)==3 && $parts[0]!='www')
     {
       return $this->nub->DL->abcCompanyGetCmpIdByCmpAbbr($parts[0]) ?? $this->defaultCmpId;
